@@ -7,25 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900">
-<!-- <header class="bg-white shadow-md py-4">
-    <div class="container mx-auto flex justify-between items-center px-6">
-        <a href="/"><h1 class="text-xl font-bold">Brand</h1></a>
-        <nav>
-            <ul class="flex space-x-6">
-                <li><a href="/about" class="hover:text-blue-500">About Us</a></li>
-                <li><a href="/contact" class="hover:text-blue-500">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header> -->
+
 <main class="container mx-auto mt-10 px-6 text-center">
     <h2 class="text-3xl font-bold">List of Employee</h2>
     <table class="min-w-full bg-white mt-6 shadow-md rounded-lg overflow-hidden">
-        <div>
-           
-            <a href="{{ route('employees.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Add Employee</a>
+        <div  class="flex justify-end pr-4 pt-2">
+            <a href="{{ route('employees.create') }}" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 m-4 inline-block">Create Employee</a>
         </div>
         <thead class="bg-gray-200">
+            
             <tr>
                 <th class="py-3 px-6 text-left">First Name</th>
                 <th class="py-3 px-6 text-left">Last Name</th>

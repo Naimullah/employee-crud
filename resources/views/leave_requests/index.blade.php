@@ -19,12 +19,14 @@
     </div>
 </header> -->
 <main class="container mx-auto mt-10 px-6 text-center">
-    <h2 class="text-3xl font-bold">List of Leaves</h2>
-    </main>
+    <h2 class="text-3xl font-bold">List of Leave Request</h2>
     <table class="min-w-full bg-white mt-6 shadow-md rounded-lg overflow-hidden">
-        <div>
-            <a href="{{ route('leave_requests.create') }}" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 m-4 inline-block">Create Leave Request</a>
-        </div>
+      <div class="flex justify-end pr-4 pt-2">
+    <a href="{{ route('leave_requests.create') }}" 
+       class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
+        Create Leave Request
+        </a>
+    </div>
         <thead class="bg-gray-200">
             <tr>
               <th class="py-3 px-6 text-left">Employee</th>
@@ -32,6 +34,7 @@
                 <th class="py-3 px-6 text-left">Start</th>
                 <th class="py-3 px-6 text-left">End</th>
                 <th class="py-3 px-6 text-left">Status</th>
+                <th class="py-3 px-6 text-left">Reason</th>
                 <th class="py-3 px-6 text-left">Actions</th>
             </tr>
         </thead>
@@ -43,8 +46,10 @@
                 <td class="py-4 px-6 text-left">{{ $leaveRequest->start_date }}</td>
                 <td class="py-4 px-6 text-left">{{ $leaveRequest->end_date }}</td>
                 <td class="py-4 px-6 text-left">{{ $leaveRequest->status }}</td>
+                <td class="py-4 px-6 text-left">{{ $leaveRequest->reason }}</td>
                 <td class="py-4 px-6 text-left">
-                    <a href="" class="text-blue-500 hover:underline">Edit</a>
+                    <a href="{{route('leave_requests.show',$leaveRequest->id)}}" class="text-blue-500 hover:underline">show</a>
+                    <a href="{{route('leave_requests.edit',$leaveRequest->id)}}" class="text-blue-500 hover:underline">Edit</a>
                     <form action="{{route('leave_requests.destroy',$leaveRequest->id)}}" method="POST" class="inline">
                         @csrf
                         @method('DELETE')

@@ -40,9 +40,9 @@
         <div class="mb-4">
             <label for="status" class="block text-gray-700 font-semibold mb-2">Status</label>
             <select name="status" id="status" class="w-full border border-gray-300 p-2 rounded-md">
-                <option value="Pending">Pending</option>
-                <option value="Approved">Approved</option>
-                <option value="Rejected">Rejected</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
             </select>
         </div>
 
